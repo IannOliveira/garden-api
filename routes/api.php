@@ -17,3 +17,4 @@ Route::middleware('auth:sanctum')->get('/me', [\App\Http\Controllers\Me\MeContro
 Route::post('login', \App\Http\Controllers\Auth\LoginController::class);
 Route::post('logout', \App\Http\Controllers\Auth\LogoutController::class);
 Route::post('registro', \App\Http\Controllers\Auth\RegistroController::class);
+Route::post('verificar-email', \App\Http\Controllers\Auth\VerificarEmailController::class);

@@ -18,6 +18,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'token' => fake()->uuid(),
             'primeiro_nome' => fake()->firstName(),
             'sobrenome' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
