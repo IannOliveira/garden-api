@@ -26,7 +26,7 @@ class RegistroRequest extends FormRequest
         return [
             'primeiro_nome' => 'string|required',
             'sobrenome' => 'string|nullable',
-            'email' => 'email|unique:users|required',
+            'email' => 'email|required',
             'password' => 'string|required',
         ];
     }
