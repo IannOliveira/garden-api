@@ -23,14 +23,14 @@ class VerificarEmailController extends Controller
             throw new TokenInvalidoException();
         }
 
-        if($user->email_verified_at) {
+        if($user->email_verified_at){
             throw new EmailVerificadoException();
         }
 
         $user->email_verified_at = now();
         $user->save();
 
-        return UserResource($user);
-
+        return new UserResource($user);
     }
+
 }

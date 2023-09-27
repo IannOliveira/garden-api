@@ -11,10 +11,11 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->primary();
+        Schema::create('user_password_reset_tokens', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });

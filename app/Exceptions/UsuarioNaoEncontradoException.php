@@ -4,9 +4,9 @@ namespace App\Exceptions;
 
 use Exception;
 
-class AutenticacaoInvalidaException extends Exception
+class UsuarioNaoEncontradoException extends Exception
 {
-    protected $message = 'As credenciais não correspondem.';
+    protected $message = 'Usuário não encontrado.';
 
     public function render(){
         return response()->json([
@@ -14,5 +14,4 @@ class AutenticacaoInvalidaException extends Exception
             'message' => $this->getMessage(),
         ]);
     }
-
 }
