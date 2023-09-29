@@ -12,6 +12,6 @@ class RedefinirSenhaTokenInvalidoException extends Exception
         return response()->json([
             'error' => class_basename($this),
             'message' => $this->getMessage(),
-        ]);
+        ], 400);
     }
 }
