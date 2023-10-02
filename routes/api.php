@@ -27,3 +27,11 @@ Route::post('registro', RegistroController::class);
 Route::post('verificar-email', VerificarEmailController::class);
 Route::post('esqueci-senha', EsqueciSenhaController::class);
 Route::post('resetar-senha', ResetarSenhaController::class);
+
+
+Route::prefix('cliente')->group(function () {
+    Route::get('', [\App\Http\Controllers\Cliente\ClienteController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\Cliente\ClienteController::class, 'register']);
+    Route::put('{id}', [\App\Http\Controllers\Cliente\ClienteController::class, 'update']);
+    Route::delete('{id}', [\App\Http\Controllers\Cliente\ClienteController::class, 'destroy']);
+});
