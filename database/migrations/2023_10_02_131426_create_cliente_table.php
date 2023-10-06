@@ -23,13 +23,13 @@ return new class extends Migration
             $table->string('bairro');
             $table->string('cep')->nullable();
             $table->string('referencia')->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->string('email')->unique();
             $table->string('pais');
             $table->string('estado');
             $table->string('cidade');
             $table->string('telefone');
             $table->string('sexo')->nullable();
-            $table->string('estado_civil');
+            $table->string('estado_civil')->nullable();
             $table->timestamps();
         });
     }

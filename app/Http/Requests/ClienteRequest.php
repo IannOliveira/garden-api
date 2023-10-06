@@ -30,15 +30,15 @@ class ClienteRequest extends FormRequest
             'endereco' => 'string|required',
             'numero_casa' => 'string|required',
             'bairro' => 'string|required',
-            'cep' => 'string',
-            'referencia' => 'string',
-            'email' => 'email',
+            'cep' => 'string|nullable',
+            'referencia' => 'string|nullable',
+            'email' => 'email|required',
             'pais' => 'string|required',
             'estado' => 'string|required',
             'cidade' => 'string|required',
             'telefone' => 'string|required',
-            'sexo' => 'string',
-            'estado_civil' => 'string',
+            'sexo' => 'string|nullable',
+            'estado_civil' => 'string|nullable',
         ];
     }
 }
