@@ -35,3 +35,11 @@ Route::prefix('cliente')->group(function () {
     Route::put('{id}', [\App\Http\Controllers\Cliente\ClienteController::class, 'update']);
     Route::delete('{id}', [\App\Http\Controllers\Cliente\ClienteController::class, 'destroy']);
 });
+
+Route::prefix('fornecedor')->group(function () {
+    Route::get('', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'register']);
+    Route::put('{id}', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'update']);
+    Route::delete('{id}', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'destroy']);
+});
+

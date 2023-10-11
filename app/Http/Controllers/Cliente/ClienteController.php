@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Cliente;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ClienteRequest;
+use App\Http\Requests\Cliente\ClienteRequest;
 use App\Http\Resources\Cliente\ClienteResource;
 use App\Models\Cliente;
 

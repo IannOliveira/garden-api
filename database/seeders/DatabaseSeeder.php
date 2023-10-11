@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Cliente;
+use App\Models\Fornecedor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -34,13 +35,27 @@ class DatabaseSeeder extends Seeder
              'bairro' => 'PEdreira',
              'cep' => '6654620',
              'referencia' => 'Test',
-             'email' => 'ianncosta13@gmail.com',
+             'rede_social' => 'iannoliveira_',
              'pais' => 'Brasil',
              'estado' => 'Pará',
              'cidade' => 'Belém',
              'telefone' => '91982299542',
              'sexo' => 'Masculino',
              'estado_civil' => 'Solteiro',
+         ]);
+
+         Fornecedor::factory()->create([
+             'cpf_cnpj' => '11111111111',
+             'inscricao_estadual' => 'Testando Inscrição',
+             'nome' => 'Farma Lider',
+             'razao_social' => 'Farmacia Lider',
+             'endereco' => 'Avenida Pedro Miranda',
+             'numero' => '246',
+             'cep' => '6654620',
+             'estado' => 'TO',
+             'cidade' => 'Abaetetuba',
+             'bairro' => 'Pedreira',
+             'telefone' => '91982299542',
          ]);
 
     }

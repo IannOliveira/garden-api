@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Cliente;
+namespace App\Http\Resources\Fornecedor;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ClienteResource extends JsonResource
+class FornecedorResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,21 +16,17 @@ class ClienteResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'cpf_cnpj' => $this->cpf_cnpj,
+            'incricao_estadual' => $this->incricao_estadual,
             'nome' => $this->nome,
-            'cpf' => $this->cpf,
-            'rg' => $this->rg,
+            'razao_social' => $this->razao_social,
             'endereco' => $this->endereco,
-            'numero_casa' => $this->numero_casa,
-            'bairro' => $this->bairro,
+            'numero' => $this->numero,
             'cep' => $this->cep,
-            'referencia' => $this->referencia,
-            'rede_social' => $this->rede_social,
-            'pais' => $this->pais,
             'estado' => $this->estado,
             'cidade' => $this->cidade,
-            'telefone' => $this->telefone,
-            'sexo' => $this->sexo,
-            'estado_civil' => $this->estado_civil,
+            'bairro' => $this->bairro,
+            'telefone' => $this->telefone
         ];
     }
 }

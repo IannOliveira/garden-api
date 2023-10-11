@@ -26,7 +26,7 @@ class ClienteFactory extends Factory
             'bairro' => fake(),
             'cep' => fake(),
             'referencia' => fake(),
-            'email' => fake()->safeEmail(),
+            'rede_social' => fake(),
             'pais' => fake(),
             'estado' => fake(),
             'cidade' => fake(),

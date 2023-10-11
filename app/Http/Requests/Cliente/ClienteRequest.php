@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Cliente;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -32,7 +32,7 @@ class ClienteRequest extends FormRequest
             'bairro' => 'string|required',
             'cep' => 'string|nullable',
             'referencia' => 'string|nullable',
-            'email' => 'email|required',
+            'rede_social' => 'string|nullable',
             'pais' => 'string|required',
             'estado' => 'string|required',
             'cidade' => 'string|required',
