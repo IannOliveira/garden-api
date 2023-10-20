@@ -51,8 +51,4 @@ class FornecedorController extends Controller
         $user->delete();
     }
 
-
-
-
-
 }

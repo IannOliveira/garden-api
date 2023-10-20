@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Cliente;
 
+use App\Exceptions\CpfDuplicadoException;
+use App\Exceptions\RgDuplicadoException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Cliente\ClienteRequest;
 use App\Http\Resources\Cliente\ClienteResource;
@@ -30,6 +32,18 @@ class ClienteController extends Controller
     public function register(ClienteRequest $request){
         $input = $request->validated();
 
+        $existeCPF = Cliente::where('cpf', $input['cpf'])->first();
+
+        if($existeCPF) {
+            throw new CpfDuplicadoException();
+        }
+
+        $existeRG = Cliente::where('rg', $input['rg'])->first();
+
+        if($existeRG) {
+            throw new RgDuplicadoException();
+        }
+
         $user = Cliente::query()->create($input);
 
         return new ClienteResource($user);
@@ -40,6 +54,22 @@ class ClienteController extends Controller
         $user = Cliente::findOrFail($id);
 
         $input = $request->validated();
+
+        if ($input['cpf'] !== $user->cpf) {
+            $existeCPF = Cliente::where('cpf', $input['cpf'])->first();
+
+            if ($existeCPF) {
+                throw new CpfDuplicadoException();
+            }
+        }
+
+        if ($input['rg'] !== $user->rg) {
+            $existeRG = Cliente::where('rg', $input['rg'])->first();
+
+            if ($existeRG) {
+                throw new RgDuplicadoException();
+            }
+        }
 
         $user->fill($input);
         $user->save();

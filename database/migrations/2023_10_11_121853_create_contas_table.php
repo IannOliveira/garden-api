@@ -26,7 +26,7 @@ return new class extends Migration
                 $table->string('tipo_pagamento');
                 $table->string('conta_movimento');
                 $table->string('plano_contas');
-                $table->timestamp('created_at')->nullable();
+                $table->timestamps();
         });
     }
 

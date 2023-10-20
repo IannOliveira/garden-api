@@ -58,5 +58,19 @@ class DatabaseSeeder extends Seeder
              'telefone' => '91982299542',
          ]);
 
+         \App\Models\Contas::factory()->create([
+            'fornecedor_id' => '1',
+             'numero_documento' => '123123',
+             'nota_fiscal' => 'ADSADA123',
+             'valor' => '10.20',
+             'valor_pago' => '30.30',
+             'data_lancamento' => '2023/10/14',
+             'data_vencimento' => '2023/10/29',
+             'data_pagamento' => '2023/10/17',
+             'tipo_pagamento' => 'Dinheiro',
+             'conta_movimento' => 'CAIXA',
+             'plano_contas' => 'Vale Transporte',
+         ]);
+
     }
 }
