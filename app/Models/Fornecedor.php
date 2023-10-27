@@ -14,6 +14,5 @@ class Fornecedor extends Model
 
     protected $table = 'fornecedor';
 
-
 }
 

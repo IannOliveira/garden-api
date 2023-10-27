@@ -13,8 +13,9 @@ class Contas extends Model
 
     protected $table = 'contas';
 
-    public function fornecedor(){
-        return $this->hasMany(Fornecedor::class);
+    public function fornecedor()
+    {
+        return $this->belongsTo(Fornecedor::class, 'fornecedor_id');
     }
 
 }

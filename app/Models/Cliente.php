@@ -13,4 +13,6 @@ class Cliente extends Model
     protected $guarded = ['id'];
 
     protected $table = 'cliente';
+
+
 }

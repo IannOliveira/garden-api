@@ -22,12 +22,13 @@ class ContasFactory extends Factory
             'nota_fiscal' => fake(),
             'valor' => fake(),
             'valor_pago' => fake(),
-            'data_lancamento' => fake(),
+            'data_lancamento' => fake()->date(now()),
             'data_vencimento' => fake(),
             'data_pagamento' => fake(),
             'tipo_pagamento' => fake(),
             'conta_movimento' => fake(),
             'plano_contas' => fake(),
+            'status' => fake(),
         ];
     }
 }

@@ -16,16 +16,17 @@ return new class extends Migration
         Schema::create('contas', function (Blueprint $table) {
                 $table->id();
                 $table->foreignId('fornecedor_id')->constrained('fornecedor')->onDelete('CASCADE')->onUpdate('CASCADE');
-                $table->string('numero_documento');
+                $table->string('numero_documento')->nullable();
                 $table->string('nota_fiscal')->nullable();
                 $table->string('valor');
-                $table->string('valor_pago');
-                $table->dateTime('data_lancamento');
+                $table->string('valor_pago')->nullable();
+                $table->date('data_lancamento');
                 $table->date('data_vencimento');
-                $table->date('data_pagamento');
+                $table->date('data_pagamento')->nullable();
                 $table->string('tipo_pagamento');
                 $table->string('conta_movimento');
                 $table->string('plano_contas');
+                $table->string('status');
                 $table->timestamps();
         });
     }

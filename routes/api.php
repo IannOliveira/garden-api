@@ -43,3 +43,8 @@ Route::prefix('fornecedor')->group(function () {
     Route::delete('{id}', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'destroy']);
 });
 
+Route::prefix('contas')->group(function () {
+    Route::get('', [\App\Http\Controllers\Contas\ContasController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\Contas\ContasController::class, 'register']);
+});
+

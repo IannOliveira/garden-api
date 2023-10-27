@@ -27,13 +27,13 @@ class FornecedorRequest extends FormRequest
             'cpf_cnpj' => 'string|nullable',
             'inscricao_estadual' => 'string|nullable',
             'nome' => 'string|required',
-            'razao_social' => 'string|required',
-            'endereco' => 'string|nullable',
+            'razao_social' => 'string|nullable',
+            'endereco' => 'string|required',
             'numero' => 'string|nullable',
             'cep' => 'string|nullable',
-            'estado' => 'string|nullable',
-            'cidade' => 'string|nullable',
-            'bairro' => 'string|nullable',
+            'estado' => 'string|required',
+            'cidade' => 'string|required',
+            'bairro' => 'string|required',
             'telefone' => 'string|nullable',
         ];
     }

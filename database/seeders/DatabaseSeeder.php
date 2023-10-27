@@ -7,6 +7,8 @@ use App\Models\Cliente;
 use App\Models\Fornecedor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use App\Models\User;
+use App\Models\Contas;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,9 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(10)->create();
+         User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
+         User::factory()->create([
              'token' => Str::uuid(),
              'primeiro_nome' => 'Iann',
              'sobrenome' => 'Oliveira',
@@ -58,7 +60,7 @@ class DatabaseSeeder extends Seeder
              'telefone' => '91982299542',
          ]);
 
-         \App\Models\Contas::factory()->create([
+         Contas::factory()->create([
             'fornecedor_id' => '1',
              'numero_documento' => '123123',
              'nota_fiscal' => 'ADSADA123',
@@ -70,6 +72,7 @@ class DatabaseSeeder extends Seeder
              'tipo_pagamento' => 'Dinheiro',
              'conta_movimento' => 'CAIXA',
              'plano_contas' => 'Vale Transporte',
+             'status' => '1',
          ]);
 
     }

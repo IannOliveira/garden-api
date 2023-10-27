@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('fornecedor', function (Blueprint $table) {
             $table->id();
-            $table->string('cpf_cnpj');
-            $table->string('inscricao_estadual');
+            $table->string('cpf_cnpj')->nullable();
+            $table->string('inscricao_estadual')->nullable();
             $table->string('nome');
-            $table->string('razao_social');
+            $table->string('razao_social')->nullable();
             $table->string('endereco');
-            $table->string('numero');
-            $table->string('cep');
+            $table->string('numero')->nullable();
+            $table->string('cep')->nullable();
             $table->string('estado');
             $table->string('cidade');
             $table->string('bairro');
-            $table->string('telefone');
+            $table->string('telefone')->nullable();
             $table->timestamps();
         });
     }
