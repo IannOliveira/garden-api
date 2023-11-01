@@ -22,7 +22,7 @@ class ContasFactory extends Factory
             'nota_fiscal' => fake(),
             'valor' => fake(),
             'valor_pago' => fake(),
-            'data_lancamento' => fake()->date(now()),
+            'data_lancamento' => fake(),
             'data_vencimento' => fake(),
             'data_pagamento' => fake(),
             'tipo_pagamento' => fake(),

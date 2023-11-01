@@ -20,7 +20,7 @@ return new class extends Migration
                 $table->string('nota_fiscal')->nullable();
                 $table->string('valor');
                 $table->string('valor_pago')->nullable();
-                $table->date('data_lancamento');
+                $table->date('data_lancamento')->nullable();
                 $table->date('data_vencimento');
                 $table->date('data_pagamento')->nullable();
                 $table->string('tipo_pagamento');
