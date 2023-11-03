@@ -18,8 +18,8 @@ return new class extends Migration
                 $table->foreignId('fornecedor_id')->constrained('fornecedor')->onDelete('CASCADE')->onUpdate('CASCADE');
                 $table->string('numero_documento')->nullable();
                 $table->string('nota_fiscal')->nullable();
-                $table->string('valor');
-                $table->string('valor_pago')->nullable();
+                $table->decimal('valor');
+                $table->decimal('valor_pago')->nullable();
                 $table->date('data_lancamento')->nullable();
                 $table->date('data_vencimento');
                 $table->date('data_pagamento')->nullable();

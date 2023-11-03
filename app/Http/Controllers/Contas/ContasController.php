@@ -45,7 +45,7 @@ class ContasController extends Controller
     public function register(ContasRequest $request){
         $input = $request->validated();
 
-        if ($input['valor'] == '0,00') {
+        if ($input['valor'] == '0') {
             throw new ValorIgualAZeroException();
         }
 
