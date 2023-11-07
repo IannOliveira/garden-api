@@ -27,7 +27,10 @@ class ContasController extends Controller
 
         $verificaDataVencimento =  Contas::with('fornecedor')
             ->where('data_vencimento', '<', $dataAtual)
-            ->whereNull('valor_pago')
+            ->where(function ($query) {
+                $query->whereNull('valor_pago')
+                    ->orWhere('valor_pago', 0);
+            })
             ->get();
 
         $verificaDataVencimento->each(function ($users) {
@@ -70,6 +73,17 @@ class ContasController extends Controller
         $user = Contas::query()->create($input);
 
         return new ContasResource($user);
+    }
+
+    public function update(ContasRequest $request, $id){
+        $user = Contas::findOrFail($id);
+
+        $input = $request->validated();
+
+        $user->fill($input);
+        $user->save();
+
+        return new ContasResource($user->fresh());
     }
 
     public function payment(ContasRequest $request, $id){

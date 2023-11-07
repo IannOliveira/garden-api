@@ -47,6 +47,7 @@ Route::prefix('contas')->group(function () {
     Route::get('', [\App\Http\Controllers\Contas\ContasController::class, 'index']);
     Route::post('', [\App\Http\Controllers\Contas\ContasController::class, 'register']);
     Route::put('{id}', [\App\Http\Controllers\Contas\ContasController::class, 'payment']);
+    Route::put('update/{id}', [\App\Http\Controllers\Contas\ContasController::class, 'update']);
     Route::delete('{id}', [\App\Http\Controllers\Contas\ContasController::class, 'destroy']);
 });
 
