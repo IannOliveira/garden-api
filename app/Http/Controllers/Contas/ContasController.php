@@ -6,6 +6,7 @@ use App\Exceptions\DataPagamentoException;
 use App\Exceptions\DataPagamentoMenorLancamentoException;
 use App\Exceptions\DataVencimentoInvalidaException;
 use App\Exceptions\DataVencimentoMenorQueAtualException;
+use App\Exceptions\DataVencimentoMenorQueDataDeLancamentoException;
 use App\Exceptions\ValorIgualAZeroException;
 use App\Exceptions\ValorPagoIgualException;
 use App\Http\Controllers\Controller;
@@ -25,17 +26,18 @@ class ContasController extends Controller
         $dataAtual = now();
         $dataAtual = $dataAtual->startOfDay();
 
-        $verificaDataVencimento =  Contas::with('fornecedor')
+        Contas::where('data_vencimento', '>=', Contas::raw('data_lancamento'))
+            ->where('status', '!=', 3)
+            ->update(['status' => 1]);
+
+        Contas::with('fornecedor')
             ->where('data_vencimento', '<', $dataAtual)
             ->where(function ($query) {
                 $query->whereNull('valor_pago')
                     ->orWhere('valor_pago', 0);
             })
-            ->get();
-
-        $verificaDataVencimento->each(function ($users) {
-            $users->update(['status' => 2]);
-        });
+            ->where('status', '!=', 3)
+            ->update(['status' => 2]);
 
         $users = Contas::with('fornecedor')
             ->orderBy('status')
@@ -79,6 +81,14 @@ class ContasController extends Controller
         $user = Contas::findOrFail($id);
 
         $input = $request->validated();
+
+        if($input['data_vencimento'] < $input['data_lancamento']){
+            throw new DataVencimentoMenorQueDataDeLancamentoException();
+        }
+
+        if($input['valor'] == null || $input['valor'] == '0'){
+            throw new ValorIgualAZeroException();
+        }
 
         $user->fill($input);
         $user->save();

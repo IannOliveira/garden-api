@@ -40,7 +40,6 @@ Route::prefix('fornecedor')->group(function () {
     Route::get('', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'index']);
     Route::post('', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'register']);
     Route::put('{id}', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'update']);
-    Route::delete('{id}', [\App\Http\Controllers\Fornecedor\FornecedorController::class, 'destroy']);
 });
 
 Route::prefix('contas')->group(function () {

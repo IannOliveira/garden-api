@@ -44,11 +44,4 @@ class FornecedorController extends Controller
         return new FornecedorResource($user->fresh());
     }
 
-    public function destroy($id){
-
-        $user = Fornecedor::where('id', $id);
-
-        $user->delete();
-    }
-
 }
