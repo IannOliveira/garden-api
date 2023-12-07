@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Cliente;
 use App\Models\Fornecedor;
+use App\Models\Produto;
+use Database\Factories\ProdutoFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\User;
@@ -74,6 +76,16 @@ class DatabaseSeeder extends Seeder
              'plano_contas' => 'Vale Transporte',
              'status' => '1',
          ]);
+
+         Produto::factory()->create([
+             'nome_produto' => 'Produto Teste!',
+             'descricao' => 'Testando o Produto Teste!',
+             'categoria' => 'Profissional',
+             'fabricante' => 'Garden',
+             'preco' => '15.50',
+             'preco_venda' => '32.00',
+         ]);
+
 
     }
 }

@@ -50,3 +50,9 @@ Route::prefix('contas')->group(function () {
     Route::delete('{id}', [\App\Http\Controllers\Contas\ContasController::class, 'destroy']);
 });
 
+Route::prefix('produtos')->group(function () {
+    Route::get('', [\App\Http\Controllers\Produto\ProdutoController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\Produto\ProdutoController::class, 'register']);
+    Route::put('{id}', [\App\Http\Controllers\Produto\ProdutoController::class, 'update']);
+});
+
