@@ -21,6 +21,7 @@ class ProdutoFactory extends Factory
             'descricao' => fake(),
             'categoria' => fake(),
             'fabricante' => fake(),
+            'quantidade' => fake(),
             'preco' => fake(),
             'preco_venda' => fake(),
         ];

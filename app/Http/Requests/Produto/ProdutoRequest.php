@@ -28,6 +28,7 @@ class ProdutoRequest extends FormRequest
             'descricao' => 'string|nullable',
             'categoria' => 'string|required',
             'fabricante' => 'string|required',
+            'quantidade' => 'integer|required',
             'preco' => 'numeric|required',
             'preco_venda' => 'numeric|required',
         ];

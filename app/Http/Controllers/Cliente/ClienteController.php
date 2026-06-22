@@ -12,13 +12,8 @@ use App\Models\Cliente;
 class ClienteController extends Controller
 {
 
-   // public function __construct(){
-     //   $this->middleware('auth:sanctum');
-    //}
-
-    public function __invoke()
-    {
-        // TODO: Implement __invoke() method.
+    public function __construct(){
+        $this->middleware('auth:sanctum');
     }
 
     public function index(){

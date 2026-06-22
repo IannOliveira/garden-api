@@ -9,9 +9,9 @@ use App\Models\Fornecedor;
 
 class FornecedorController extends Controller
 {
-    public function __invoke()
-    {
-        // TODO: Implement __invoke() method.
+
+    public function __construct(){
+        $this->middleware('auth:sanctum');
     }
 
     public function index(){

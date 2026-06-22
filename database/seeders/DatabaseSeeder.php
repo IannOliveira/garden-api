@@ -82,6 +82,7 @@ class DatabaseSeeder extends Seeder
              'descricao' => 'Testando o Produto Teste!',
              'categoria' => 'Profissional',
              'fabricante' => 'Garden',
+             'quantidade' => '4',
              'preco' => '15.50',
              'preco_venda' => '32.00',
          ]);

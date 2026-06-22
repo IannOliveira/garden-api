@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('descricao');
             $table->string('categoria');
             $table->string('fabricante');
+            $table->integer('quantidade');
             $table->decimal('preco');
             $table->decimal('preco_venda');
             $table->timestamps();

@@ -18,7 +18,7 @@ class ClienteResource extends JsonResource
             'id' => $this->id,
             'nome' => $this->nome,
             'cpf' => $this->cpf,
-            'rg' => $this->rg,
+                'rg' => $this->rg,
             'endereco' => $this->endereco,
             'numero_casa' => $this->numero_casa,
             'bairro' => $this->bairro,

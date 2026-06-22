@@ -17,9 +17,9 @@ use Carbon\Carbon;
 
 class ContasController extends Controller
 {
-    public function __invoke()
-    {
 
+    public function __construct(){
+        $this->middleware('auth:sanctum');
     }
 
     public function index(){
@@ -126,7 +126,7 @@ class ContasController extends Controller
     }
 
     public function destroy($id){
-        $user = Contas::where('id', $id);
+        $user = Contas::query()->where('id', $id);
 
         $user->delete();
     }
