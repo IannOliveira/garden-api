@@ -56,3 +56,17 @@ Route::prefix('produtos')->group(function () {
     Route::put('{id}', [\App\Http\Controllers\Produto\ProdutoController::class, 'update']);
 });
 
+Route::prefix('faturamento')->group(function () {
+    Route::get('', [\App\Http\Controllers\FaturamentoController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\FaturamentoController::class, 'register']);
+    Route::delete('{id}', [\App\Http\Controllers\FaturamentoController::class, 'destroy']);
+});
+
+Route::prefix('contas-receber')->group(function () {
+    Route::get('', [\App\Http\Controllers\ContaReceberController::class, 'index']);
+    Route::put('{id}/pagar', [\App\Http\Controllers\ContaReceberController::class, 'payment']);
+});
+
+Route::prefix('caixa')->group(function () {
+    Route::get('', [\App\Http\Controllers\CaixaController::class, 'index']);
+});
